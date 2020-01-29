@@ -1,11 +1,16 @@
 public class TestApplication {
 
     public static void main(String[] args) {
+        testCase1();
+    }
+
+    private static void testCase1() {
         Bank bank = new Bank();
         bank.transfer(1, 2, 100);
 
         new Tester(bank).verifyAccount(1).hasBalance(0).run();
         new Tester(bank).verifyAccount(2).hasBalance(600).run();
+        System.out.println("test case end");
     }
 
     public static class Tester {
